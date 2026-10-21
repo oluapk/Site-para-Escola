@@ -33,7 +33,7 @@ button { font: inherit; }
 .nav-contact span { margin-left: 12px; color: var(--green); }
 .menu-toggle { display: none; }
 
-.hero { min-height: 570px; position: relative; display: flex; align-items: center; overflow: hidden; color: var(--white); background: #31463b url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2000&q=85") center 48% / cover no-repeat; }
+.hero { min-height: 570px; position: relative; display: flex; align-items: center; overflow: hidden; color: var(--white); background: #31463b url("images/escola-quadra.jpg") center 48% / cover no-repeat; }
 .hero-shade { position: absolute; inset: 0; background: rgba(17, 34, 27, .57); }
 .hero-content { position: relative; z-index: 1; width: min(780px, 85%); margin-left: 11.5%; padding: 80px 0; animation: rise-in .7s ease both; }
 .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; color: var(--lime); font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
@@ -62,11 +62,14 @@ h1, h2, h3, p { margin-top: 0; }
 .notice-empty strong { font-size: 13px; }
 .notice-empty p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
 
-.school-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 390px; background: #e9eee5; }
-.school-photo { min-height: 390px; background: #bac9b8 url("https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=85") center / cover no-repeat; }
-.school-copy { align-self: center; max-width: 560px; padding: 70px clamp(36px, 7vw, 110px); }
-.school-copy h2 { max-width: 410px; }
-.school-copy > p:not(.eyebrow) { margin: 20px 0 24px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.school-section { background: #e9eee5; }
+.school-intro { padding: 78px 11.5% 30px; }
+.school-intro h2 { margin: 0; font-family: var(--font-display); font-size: clamp(36px, 4vw, 50px); font-weight: 500; line-height: 1.1; }
+.school-intro > p:last-child { margin: 14px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.school-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding: 0 11.5% 78px; }
+.gallery-item { min-width: 0; margin: 0; background: var(--white); }
+.gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery-item figcaption { padding: 13px 15px; color: var(--ink); font-size: 12px; font-weight: 600; }
 .text-link { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; }
 .text-link span { color: var(--green); font-size: 17px; }
 
@@ -95,6 +98,9 @@ h1, h2, h3, p { margin-top: 0; }
 
 @keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+@media (max-width: 980px) {
+	.school-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 760px) {
 	.site-header { height: 72px; padding: 0 5%; }
 	.menu-toggle { width: 42px; height: 42px; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 9px; border: 1px solid var(--line); background: transparent; cursor: pointer; }
@@ -112,9 +118,8 @@ h1, h2, h3, p { margin-top: 0; }
 	.section { padding: 68px 7%; }
 	.section-heading { align-items: start; flex-direction: column; gap: 15px; margin-bottom: 27px; }
 	.section-intro { max-width: 390px; }
-	.school-section { grid-template-columns: 1fr; }
-	.school-photo { min-height: 280px; }
-	.school-copy { padding: 48px 7%; }
+	.school-intro { padding: 58px 7% 24px; }
+	.school-gallery { grid-template-columns: 1fr; gap: 14px; padding: 0 7% 58px; }
 	.info-grid { grid-template-columns: 1fr; }
 	.info-item, .info-item + .info-item { min-height: unset; padding: 21px 0; border-left: 0; border-bottom: 1px solid var(--line); }
 	.info-item h3 { margin-top: 14px; }
